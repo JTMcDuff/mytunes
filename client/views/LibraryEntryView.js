@@ -8,6 +8,8 @@ var LibraryEntryView = Backbone.View.extend({
   events: {
     'click': function() {
       this.model.play();
+      // Refactor this: (as is now, on click, a song gets played AND enqueued, which is bad)
+      this.model.enqueue();
     }
   },
 
